@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>吴天羽和袁慧琳の小屋</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <div class="shell" id="shell">
+    <div class="header">
+      <h2 class="title">我们的故事</h2>
+      <h3 class="subtitle">才正要开始</h3>
+    </div>
+    <div class="timeline">
+    </div>
+  </div>
+
+  <script>
+    function createChild() {
+      let box = document.querySelector('.timeline')
+
+      // 定义一个数组，每个元素代表一个时间线项
+  
+      const childrenData = [
+        {
+          titile: '《我们相遇的地方》',
+          year: '2024',
+          text: '我们第一次在海山相遇',
+          image: './img/IMG_20240519_233116.jpg'
+        },
+        {
+          titile: '《一起看的第一场脱口秀》',
+          year: '2024',
+          text: '生命中最困难的阶段不是没有人懂你，而是你不懂自己。',
+          image: './img/IMG_20240128_161109.jpg'
+        },
+        {
+          titile: '《辣死我的火锅》',
+          year: '2024',
+          text: '每一次失败都是成功的开始。',
+          image: './img/IMG_20240224_182149.jpg'
+        },
+        {
+          titile: '《看的第一场烟花》',
+          year: '2024',
+          text: '正式在一起之前',
+          image: './img/IMG_20240224_212002.jpg'
+        },
+        {
+          titile: '《莲花山》',
+          year: '2024',
+          text: '在一起之后',
+          image: './img/IMG_20240303_160742.jpg'
+        },
+        {
+          titile: '《美景分享给爱的人》',
+          year: '2024',
+          text: '闲散的日子, 总是过得很快',
+          image: './img/IMG_20240311_191938.jpg'
+        },
+        {
+          titile: '《双人成行》',
+          year: '2024',
+          text: '月下的我们。',
+          image: './img/IMG_20240314_202945.jpg'
+        },
+        {
+          titile: '《心心念念的小火车》',
+          year: '2024',
+          text: '还想再坐一次小火车嘛',
+          image: './img/IMG_20240317_145316.jpg'
+        },
+        {
+          titile: '《尾随视角》',
+          year: '2024',
+          text: '这个衣服再也没见你穿过',
+          image: './img/IMG_20240317_145521.jpg'
+        },
+        {
+          titile: '《某人的有求必应》',
+          year: '2024',
+          text: '小袁袁永远心想事成',
+          image: './img/IMG_20240324_150824.jpg'
+        },
+        {
+          titile: '《乌漆嘛黑的夜晚》',
+          year: '2024',
+          text: '贴的飞机',
+          image: './img/IMG_20240324_195208.jpg'
+        },
+        {
+          titile: '《嘿嘿》',
+          year: '2024',
+          text: '每一次失败都是成功的开始。',
+          image: './img/IMG_20240331_184438.jpg'
+        },
+        {
+          titile: '《第一次^_^》',
+          year: '2024',
+          text: '很难忘的一天',
+          image: './img/IMG_20240404_223348.jpg'
+        },
+        {
+          titile: '《珠海之夜》',
+          year: '2024',
+          text: '很难忘的夜晚',
+          image: './img/IMG_20240404_224453.jpg'
+        },
+        {
+          titile: '《澳门之行》',
+          year: '2024',
+          text: '走路有点累了',
+          image: './img/IMG_20240405_131418.jpg'
+        },
+        {
+          titile: '《等了好久的蛋挞。。。》',
+          year: '2024',
+          text: '下次再也不跟风了',
+          image: './img/IMG_20240405_172216.jpg'
+        },
+        {
+          titile: '《还记得哪个是我们写的嘛？》',
+          year: '2024',
+          text: '你猜猜',
+          image: './img/IMG_20240405_174159.jpg'
+        },
+        {
+          titile: '《可可爱爱没有脑袋》',
+          year: '2024',
+          text: '嘿嘿嘿',
+          image: './img/IMG_20240405_180416.jpg'
+        },
+        {
+          titile: '《回程》',
+          year: '2024',
+          text: '回去咯',
+          image: './img/IMG_20240406_170430.jpg'
+        },
+        {
+          titile: '《可爱loopy》',
+          year: '2024',
+          text: '第一次吵架还没记录, 就跳过吧',
+          image: './img/IMG_20240518_211716.jpg'
+        },
+        {
+          titile: '《自拍》',
+          year: '2024',
+          text: '夫妻相',
+          image: './img/IMG_20240518_212457.jpg'
+        },
+        {
+          titile: '又来莲花山辣',
+          year: '2024',
+          text: '夫妻相',
+          image: './img/mmexport1716080346248.jpg'
+        },
+        {
+          titile: '《大头照》',
+          year: '2024',
+          text: '每一次失败都是成功的开始。',
+          image: './img/1713145663940.jpg'
+        },
+        
+        // 可以继续添加更多的时间线项
+      ];
+
+      childrenData.forEach(childData => {
+        const child = `
+          <div class="item" data-text="${childData.titile}">
+            <div class="content">
+              <img src="${childData.image}" alt="照片哪去了?" class="img">
+              <h2 class="content-title">${childData.year}</h2>
+              <p class="content-desc">
+                ${childData.text}
+              </p>
+            </div>
+          </div>
+        `;
+        box.innerHTML += child;
+      });
+
+    //   const child = `
+    //     <div class="item" data-text="《你的孤独，虽败犹荣》">
+    //       <div class="content">
+    //         <img src="./0f7333096cb6c064b2150bcc01f5b0b.png" alt="" class="img">
+    //         <h2 class="content-title">2002</h2>
+    //         <p class="content-desc">
+    //           如果你停止，就是谷底。如果你还在继续，
+    //           就是上坡，这是我听过关于人生低谷最好的阐述。
+    //         </p>
+    //       </div>
+    //     </div>
+    //   `
+    //   for (let i = 0; i < 10; i++) {
+    //     box.innerHTML += child;
+    //   }
+
+    }
+    createChild();
+  </script>
+  <script src="./index.js"></script>
+
+</body>
+
+</html>
